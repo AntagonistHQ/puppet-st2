@@ -37,7 +37,7 @@ class st2::profile::rabbitmq (
   $erlang_rhel_gpgcheck           = $st2::erlang_rhel_gpgcheck,
   $erlang_rhel_repo_gpgcheck      = $st2::erlang_rhel_repo_gpgcheck,
 ) inherits st2 {
-
+  include epel
   # RHEL 8 Requires another repo in addition to epel to be installed
   if ($facts['os']['family'] == 'RedHat') {
     $repos_ensure = true
